@@ -43,7 +43,6 @@ File.open('../rides.csv', 'w') do |file|
         file.puts line
     end
     puts
-
     file.close
 end
 
