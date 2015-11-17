@@ -46,6 +46,8 @@ class StravaWrapper
         # navigate to manual activity upload page
         puts '  Navigating to manual upload page'
         @driver.navigate.to 'http://app.strava.com/activities/new'
+        # @driver.navigate.to 'http://www.strava.com/upload/manual'
+
         puts '  Navigated to manual upload page'
 
         # switch to run
