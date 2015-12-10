@@ -18,41 +18,16 @@ end
 puts "Strava credentials:"
 puts "  Email:    #{email}"
 puts "  Password: #{password}"
-puts
 
-# strava = StravaWrapper.new
-# strava.connect
-# strava.login(email, password)
-
-f = File.open("../runs.csv", "r")
-f.each_line { |line|
-      # each line has fields separated by commas, so split those fields
-    # p=Person.new
-
-    puts fields = line.split(' ')
-    puts fields[1].to_s(' , ').split
-    # puts "MARK"
-    # puts fields[3].to_s(' ').strip
-
-
-  # do a little work here to get rid of double-quotes and blanks
-  # p.last_name = fields[0].tr_s('"', '').strip
-  # p.first_name = fields[1].tr_s('"', '').strip
-  # p.city = fields[2].tr_s('"', '').strip
-  # people.push(p)
-}
-
-
-
-
-
-# CSV.foreach("../runs.csv") do |row|
-#   puts row.each_slice(",").to_a
-#     puts "NEW"
-#     # puts row
-# end
-
-# # load runs file
+strava = StravaWrapper.new
+strava.connect
+strava.login(email, password)
+# load runs file
+    CSV.foreach("../runs.csv") do |row|
+      puts duration = row[-1]
+      puts date = row[0]
+      puts distance= row [1]
+      end
 # File.open('../runs.csv', 'r') do |file|
 #     while (line = file.gets)
 #         if line.length > 0
